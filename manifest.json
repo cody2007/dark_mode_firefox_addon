@@ -1,0 +1,85 @@
+{
+  "name": "Dark mode w/ keyboard controls",
+  "description": "Inverts page colors, showing white text on a dark background - with keyboard controls.",
+  "version": "2021.5.13.0",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+	"commands": {
+		"cycle-feature": {
+   			"suggested_key": {
+				"default": "Alt+R"
+			},
+			"description": "Cycle through the modes."
+		},
+		"cycle-feature-backward": {
+   			"suggested_key": {
+				"default": "Alt+Shift+R"
+			},
+			"description": "Cycle through the modes (backward)."
+		},
+		"toggle-feature": {
+			"suggested_key": {
+				"default": "Alt+Q"
+			},
+			"description": "Toggle on/off."
+		},
+		"mode-1-feature": {
+			"suggested_key": {
+				"default": "Ctrl+1"
+			},
+			"description": "Switch to mode 1."
+		},
+		"mode-2-feature": {
+			"suggested_key": {
+				"default": "Ctrl+2"
+			},
+			"description": "Switch to mode 2."
+		},
+		"mode-3-feature": {
+			"suggested_key": {
+				"default": "Ctrl+3"
+			},
+			"description": "Switch to mode 3."
+		},
+		"mode-4-feature": {
+			"suggested_key": {
+				"default": "Ctrl+4"
+			},
+			"description": "Switch to mode 4."
+		}
+	},
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "match_about_blank": true,
+      "css": ["style.css"],
+      "js": ["load.js"],
+      "run_at": "document_start"
+    }
+  ],
+
+  "browser_action": {
+    "default_title": "Dark mode",
+    "default_icon": {
+      "19": "icon-19.png",
+      "38": "icon-38.png"
+    }
+  },
+
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+
+  "options_page": "options.html",
+
+  "manifest_version": 2
+}
